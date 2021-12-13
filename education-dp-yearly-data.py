@@ -10,10 +10,8 @@ class yearly_data(object):
     db_cm = MongoDatabase().db["education-dp-yearly-data"]
 
     def __init__(self):
-         pass         
-     
-    def import_content_yearly_data(filepath):
-    
+         pass 
+    def import_content_yearly_data(filepath):    
         try:                       
             # Define relative path to folder containing the text files            
             filenames = glob.glob(os.path.join(filepath ,"*.txt")) 
@@ -58,15 +56,11 @@ class yearly_data(object):
             print("Error: can\'t find file or read data")
         else:
             print("Written content in the MongoDB successfully")
-    
-   
-    
+         
     def test_list_documents():
-        
         # number of documents in the collection
         mydoc = yearly_data.db_cm.count_documents({})
-        print("The number of documents in collection : ", mydoc) 
-        
+        print("The number of documents in collection : ", mydoc)         
         YearwisecollectionData = yearly_data.db_cm.aggregate(
             [
                 # First Stage: group by
@@ -85,10 +79,9 @@ class yearly_data(object):
        
         for datalist in YearwisecollectionData:            
             print(datalist)
-    
-    
+   
 if __name__ == "__main__":
-  filepath = 'C:\python_practice\education-dp-exercise-simplified'  #pass csv file path
+  filepath = '/tmp/education-dp-exercise-simplified'  #pass csv file path
   yearly_data.import_content_yearly_data(filepath)
   yearly_data.test_list_documents()
  
