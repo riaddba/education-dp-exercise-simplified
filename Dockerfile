@@ -1,5 +1,5 @@
 # Dockerizing Python 3.9.7 and MongoDB 5.0
-# Based on centos:latest, installs MongoDB following the instructions from:
+# Based on ubuntu:latest, installs MongoDB following the instructions from:
 # https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/
 # INSTRUCTIONS:
 # - Create the contianer:
